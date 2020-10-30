@@ -1,1 +1,1 @@
-# card_scanner
+# card-scanner
