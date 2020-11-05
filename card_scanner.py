@@ -1,3 +1,10 @@
+"""============================================================================
+TITLE       : card_scanner.py
+BY          : Sang Yoon Byun
+DESCRIPTION : A scanner that can capture the contours and interpret the 
+              contents of a business card
+============================================================================"""
+
 import cv2
 import numpy as np
 import sys
@@ -297,6 +304,9 @@ def detect_card(src, card_width, card_height):
     display_text(cpy, "Type 'y': continue or 'n': redefine")
 
     cv2.imshow('Detected Edges', cpy)
+    
+    cv2.namedWindow("Card", cv2.WINDOW_NORMAL)
+    cv2.resizeWindow("Card", card_width//2, card_height//2)
     cv2.imshow('Card', dst)
 
     # Whether or not user wants to redefine.
@@ -353,9 +363,15 @@ def main():
     
     # Attain text information using Tesseract-OCR
     card_gray = cv2.cvtColor(card, cv2.COLOR_BGR2GRAY)
+    print("="*80, "\n")
     print(pytesseract.image_to_string(card_gray, lang='eng'))
+    print("="*80, "\n")
 
+    # Show final card
+    cv2.namedWindow("Card", cv2.WINDOW_NORMAL)
+    cv2.resizeWindow("Card", CARD_WIDTH//2, CARD_HEIGHT//2)
     cv2.imshow('Card', card)
+
     cv2.waitKey()
     cv2.destroyAllWindows()
 
