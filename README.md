@@ -18,7 +18,7 @@ pip install opencv-python==4.1.0.25
 
 ## Usage
 
-Clone the handmotion-control repository in your directory.
+Clone the card-scanner repository in your directory.
 
 ```bash
 git clone https://github.com/byunsy/card-scanner.git
