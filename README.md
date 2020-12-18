@@ -34,6 +34,8 @@ python card_scanner.py
 - Press "y" or "Y" if satisfied with the auto-detected edges.
 - Press "n" or "N" if you would like to manually redefine the edges.
 
+The program might fail to correctly detect the edges of a card if the background is too "complex". It works the best when the card is laid flat on a hard surface (eg. table).
+
 ## Demonstrations
 
 Case 1. The program can accurately detect and read a simple business card.
